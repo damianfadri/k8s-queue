@@ -11,8 +11,8 @@ public class DequeueWorker(
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         var jobList = client.BatchV1.ListNamespacedJobWithHttpMessagesAsync(
-            namespaceParameter: "default",
-            labelSelector: "jobs/queue-enabled=true",
+            namespaceParameter: options.Value.Namespace,
+            labelSelector: options.Value.Selector,
             watch: true,
             cancellationToken: stoppingToken);
 
@@ -26,8 +26,8 @@ public class DequeueWorker(
             try
             {
                 var deployedJobs = await client.BatchV1.ListNamespacedJobAsync(
-                    namespaceParameter: "default",
-                    labelSelector: "jobs/queue-enabled=true",
+                    namespaceParameter: options.Value.Namespace,
+                    labelSelector: options.Value.Selector,
                     cancellationToken: stoppingToken);
 
                 var upcomingJob = deployedJobs.Items
@@ -49,7 +49,7 @@ public class DequeueWorker(
                 await client.BatchV1.PatchNamespacedJobAsync(
                     body: patch,
                     name: upcomingJob.Metadata.Name,
-                    namespaceParameter: "default",
+                    namespaceParameter: options.Value.Namespace,
                     cancellationToken: stoppingToken);
 
                 Console.WriteLine($"{upcomingJob.Metadata.Name} is next, running.");

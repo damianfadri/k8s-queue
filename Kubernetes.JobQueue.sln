@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kubernetes.JobQueue", "src\Kubernetes.JobQueue\Kubernetes.JobQueue.csproj", "{079B00CD-500D-6D0C-D7A4-A266D99A684F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{079B00CD-500D-6D0C-D7A4-A266D99A684F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079B00CD-500D-6D0C-D7A4-A266D99A684F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079B00CD-500D-6D0C-D7A4-A266D99A684F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079B00CD-500D-6D0C-D7A4-A266D99A684F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C02E63CE-05F5-4D96-90FA-A2FF5153A324}
+	EndGlobalSection
+EndGlobal
